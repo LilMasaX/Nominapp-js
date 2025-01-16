@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nominapp</title>
+
+  <!--Styles and Fonts -->
+  <link href="https://cdn.lineicons.com/5.0/lineicons.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+  <div class="d-flex">
+    <!-- Sidebar -->
+    <aside id="sidebar" class="sidebar-toggle">
+      <div class="sidebar-logo">
+        <a href="#">Nominapp</a>
+      </div>
+      <div class="date-range">01 Mar, 2024 - 14 Oct, 2024</div>
+      <!-- Sidebar Navigation -->
+      <ul class="sidebar-nav p-0">
+        <li class="sidebar-header">
+          <span>Menú</span>
+        </li>
+        <li class="sidebar-item">
+          <a href="index.html" class="sidebar-link" onclick="openTab('desprendibles')">
+            <i class="lni lni-envelope-1"></i>
+            <span>Desprendibles</span>
+          </a>
+        </li>
+        <li class="sidebar-item">
+          <a href="#historial" class="sidebar-link" onclick="openTab('historial')">
+            <i class="lni lni-calendar-days"></i>
+            <span>Historial</span>
+          </a>
+        </li>
+        <li class="sidebar-item">
+          <a href="./pages/trabajadores.html" class="sidebar-link" onclick="openTab('trabajadores')">
+            <i class="lni lni-hierarchy-1"></i>
+            <span>Trabajadores</span>
+          </a>
+        </li>
+      </ul>
+    </aside>
+    <!-- Sidebar Ends -->
+
+    <div class="main">
+      <!-- Navbar button -->
+      <nav class="navbar navbar-expand">
+        <button class="toggler-btn" type="button">
+          <i class="lni lni-menu-hamburger-1"></i>
+        </button>
+      </nav>
+
+      <main class="main-content p-3">
+        <div id="desprendibles" class="tab-content">
+          <h1>Generar Desprendible</h1>
+          <label class="form-curso" for="trabajador">Seleccionar Trabajador:</label>
+          <select class="input-field" ="trabajador">
+            <option>Juan Pérez</option>
+            <option>Ana López</option>
+          </select>
+          <br><br>
+          <label for="fecha">Fecha de Pago:</label>
+          <input class="input-field" type="date" id="fecha">
+          <br><br>
+          <label for="devengados">Agregar Devengados:</label>
+          <input class="input-field" type="number" id="devengados">
+          <br><br>
+          <label for="deducciones">Agregar Deducciones:</label>
+          <input class="input-field" type="number" id="deducciones">
+          <br><br>
+          <button class="btn-add" onclick="enviarDesprendible()">Enviar Desprendible</button>
+          <button class="btn-add" onclick="generarDesprendible()">Generar Desprendible </button>
+        </div>
+
+        <div id="historial" class="tab-content" style="display: none;">
+          <h2>Historial de Desprendibles</h2>
+          <p>No hay datos disponibles por el momento.</p>
+        </div>
+
+        <div id="trabajadores" class="tab-content" style="display: none;">
+          <h2>Modificar Información de Trabajadores</h2>
+          <p>Aquí puedes actualizar la información de los empleados.</p>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="text-center p-3">
+    <p>&copy; Nominapp. Todos los derechos reservados.</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script type="module" src="./js/main.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
